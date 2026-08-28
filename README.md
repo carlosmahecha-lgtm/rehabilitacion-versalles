@@ -4,18 +4,53 @@ Landing page estática: `index.html` contiene el marcado, los estilos y el JavaS
 `images/` contiene las fotografías. No requiere build ni dependencias. La única petición
 externa son las tipografías de Google Fonts (Newsreader y Archivo).
 
-## Ver el sitio
+## El sitio en producción
 
-Abre `index.html` en el navegador, o publícalo tal cual.
+| | |
+| --- | --- |
+| Dominio | **https://centroversalles.com** (y `www.centroversalles.com`) |
+| Dirección de Vercel | https://versalles-web-rho.vercel.app |
+| Proyecto en Vercel | `versalles-web`, en el equipo `cratch` (plan Hobby) |
+| Registrador del dominio | Vercel · vence el 28 de agosto de 2027 · renovación automática activada |
+| Repositorio | https://github.com/carlosmahecha-lgtm/rehabilitacion-versalles |
 
-## Publicar en Vercel
+El hosting, el certificado HTTPS y la CDN están incluidos en el plan Hobby, sin costo.
+El repositorio **no está conectado a Vercel**: sirve como historial, pero los despliegues
+son manuales (ver abajo).
+
+## Ver el sitio en local
+
+Abre `index.html` en el navegador. No necesita servidor.
+
+## Publicar cambios
+
+Desde esta carpeta, con el CLI de Vercel ya instalado y con sesión iniciada:
 
 ```bash
-npx vercel deploy --prod
+vercel deploy --prod
 ```
 
-Vercel lo detecta como sitio estático y sirve `index.html` en la raíz. No hace falta
-`vercel.json`.
+Vercel lo detecta como sitio estático y sirve `index.html` en la raíz; no hace falta
+`vercel.json`. Conviene además dejar el cambio versionado:
+
+```bash
+git add -A && git commit -m "descripción del cambio" && git push
+```
+
+Si más adelante quieres que cada `git push` despliegue solo, hay que instalar la
+aplicación de Vercel en la cuenta de GitHub `carlosmahecha-lgtm` (donde vive el
+repositorio) y enlazar el proyecto desde el panel de Vercel.
+
+## Correo del dominio
+
+Pendiente. El plan es **Zoho Mail** en su plan gratuito: un dominio, hasta 5 buzones de
+5 GB, acceso por web y app móvil (sin IMAP/POP, así que no funciona con Outlook ni Apple
+Mail; para eso hace falta Mail Lite, ~US$1 por buzón al mes).
+
+El procedimiento: crear la cuenta en Zoho con el dominio `centroversalles.com`, y luego
+agregar en el DNS de Vercel (https://vercel.com/cratch/~/domains) los registros que Zoho
+entregue: un **TXT** de verificación de propiedad, los **MX** de entrega, y los **TXT** de
+SPF y DKIM para que el correo no caiga en spam.
 
 ## Estructura de la página
 
