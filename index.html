@@ -1,0 +1,1403 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Centro de Rehabilitación Versalles: rehabilitación integral neurológica, ortopédica y neuromuscular en Cali. Equipo interdisciplinario, espacios accesibles y planes de tratamiento medibles.">
+<meta name="theme-color" content="#0F5A55">
+<!--ARTIFACT-START-->
+<title>Rehabilitación Versalles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap">
+<style>
+/* ============================================================
+   Centro de Rehabilitación Versalles
+   Paleta: petróleo / agua / arcilla sobre papel de sesgo verde
+   Identidad de una sola atmósfera (clara), pintada explícitamente.
+   ============================================================ */
+:root{
+  color-scheme: light;
+
+  --paper:#F4F7F5;
+  --paper-2:#EAF1ED;
+  --surface:#FFFFFF;
+  --ink:#0E1F1C;
+  --ink-2:#33443F;
+  --muted:#667873;
+  --line:#D9E4DF;
+  --line-strong:#BFD2CB;
+
+  --petrol:#0F5A55;
+  --petrol-2:#0A403D;
+  --petrol-3:#072D2B;
+  --agua:#7FC8BE;
+  --agua-soft:#DBEDE8;
+  --clay:#BE5F3B;
+  --clay-soft:#F1DDD3;
+
+  --pad: clamp(1.15rem, 5vw, 4rem);
+  --sec: clamp(4.25rem, 9vw, 7.5rem);
+  --radius: 6px;
+  --radius-lg: 10px;
+
+  --ff-display:"Newsreader", "Iowan Old Style", Georgia, serif;
+  --ff-body:"Archivo", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  --shadow-soft: 0 1px 2px rgba(10,64,61,.05), 0 12px 34px -18px rgba(10,64,61,.28);
+  --shadow-lift: 0 2px 4px rgba(10,64,61,.06), 0 26px 60px -28px rgba(10,64,61,.42);
+}
+
+*,*::before,*::after{ box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--ff-body);
+  font-size:1.0625rem;
+  line-height:1.68;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{ max-width:100%; display:block; }
+a{ color:inherit; }
+button,input,select,textarea{ font:inherit; color:inherit; }
+:focus-visible{ outline:2px solid var(--petrol); outline-offset:3px; border-radius:3px; }
+
+.skip{
+  position:absolute; left:var(--pad); top:-100px; z-index:200;
+  background:var(--petrol); color:#fff; padding:.7rem 1.1rem; border-radius:var(--radius);
+  font-weight:600; text-decoration:none; transition:top .18s ease;
+}
+.skip:focus{ top:.75rem; }
+
+/* ---------- estructura ---------- */
+.wrap{ width:min(1180px, 100% - var(--pad) * 2); margin-inline:auto; }
+.wrap--narrow{ width:min(880px, 100% - var(--pad) * 2); margin-inline:auto; }
+.section{ padding-block:var(--sec); position:relative; }
+.section--paper{ background:var(--paper); }
+.section--surface{ background:var(--surface); }
+.section--tint{ background:var(--paper-2); }
+.section--dark{ background:var(--petrol-2); color:#DCEDE8; }
+.section--tight{ padding-block:clamp(3rem,5vw,4.25rem); }
+
+/* motivo de barras paralelas que abre cada sección */
+.bars{ display:flex; flex-direction:column; gap:4px; width:56px; margin:0 0 1.35rem; padding:0; }
+.bars i{ display:block; height:2px; border-radius:2px; background:var(--petrol); }
+.bars i:last-child{ width:32px; background:var(--clay); }
+.section--dark .bars i{ background:var(--agua); }
+.section--dark .bars i:last-child{ background:#E8A183; }
+.bars--center{ margin-inline:auto; align-items:center; }
+
+/* ---------- tipografía ---------- */
+h1,h2,h3,h4{ font-family:var(--ff-display); font-weight:400; color:var(--ink); text-wrap:balance; margin:0; line-height:1.12; letter-spacing:-.012em; }
+.section--dark h2,.section--dark h3,.section--dark h4{ color:#F2FAF7; }
+p{ margin:0; }
+figure,figcaption,blockquote,dl,dd{ margin:0; }
+ul,ol{ margin:0; }
+
+.eyebrow{
+  font-family:var(--ff-body); font-size:.72rem; font-weight:600;
+  letter-spacing:.15em; text-transform:uppercase; color:var(--petrol); margin:0 0 .9rem;
+}
+.section--dark .eyebrow{ color:var(--agua); }
+
+.h-display{ font-size:clamp(2.5rem, 6vw, 4.4rem); line-height:1.03; }
+.h-2{ font-size:clamp(1.95rem, 3.4vw, 2.8rem); }
+.h-3{ font-size:clamp(1.28rem, 1.9vw, 1.55rem); }
+.h-4{ font-family:var(--ff-body); font-size:1.02rem; font-weight:600; line-height:1.45; letter-spacing:-.003em; }
+
+.lead{ font-size:clamp(1.06rem, 1.35vw, 1.2rem); line-height:1.62; color:var(--ink-2); max-width:62ch; }
+.body-muted{ color:var(--muted); max-width:66ch; }
+.section--dark .lead,.section--dark .body-muted{ color:#B9D5CF; }
+
+.em-serif{ font-style:italic; position:relative; white-space:nowrap; }
+.em-serif::after{
+  content:""; position:absolute; left:.02em; right:.02em; bottom:-.02em; height:.09em;
+  background:var(--clay); border-radius:99px; opacity:.85;
+}
+
+.stack{ display:flex; flex-direction:column; }
+.gap-sm{ gap:.7rem; } .gap-md{ gap:1.3rem; } .gap-lg{ gap:2.3rem; }
+
+/* ---------- botones ---------- */
+.btn{
+  display:inline-flex; align-items:center; gap:.55rem; justify-content:center;
+  padding:.9rem 1.45rem; border-radius:var(--radius); border:1px solid transparent;
+  font-weight:600; font-size:.94rem; text-decoration:none; cursor:pointer;
+  transition:background .2s ease, color .2s ease, border-color .2s ease, transform .2s ease;
+}
+.btn svg{ width:16px; height:16px; flex:none; }
+.btn--primary{ background:var(--petrol); color:#fff; }
+.btn--primary:hover{ background:var(--petrol-2); transform:translateY(-1px); }
+.btn--ghost{ background:transparent; color:var(--petrol); border-color:var(--line-strong); }
+.btn--ghost:hover{ border-color:var(--petrol); background:var(--agua-soft); }
+.btn--light{ background:#fff; color:var(--petrol-2); }
+.btn--light:hover{ background:var(--agua-soft); transform:translateY(-1px); }
+.btn--outline-light{ background:transparent; color:#EAF3F0; border-color:rgba(234,243,240,.4); }
+.btn--outline-light:hover{ border-color:#EAF3F0; background:rgba(234,243,240,.1); }
+.btn--wide{ width:100%; }
+
+/* ---------- barra superior + encabezado ---------- */
+.topbar{ background:var(--petrol-3); color:#BFDCD6; font-size:.8rem; }
+.topbar__in{ display:flex; flex-wrap:wrap; gap:.4rem 1.5rem; align-items:center; justify-content:space-between; padding-block:.6rem; }
+.topbar__group{ display:flex; flex-wrap:wrap; gap:.35rem 1.4rem; align-items:center; }
+.topbar a{ text-decoration:none; display:inline-flex; align-items:center; gap:.45rem; color:#DCEDE9; }
+.topbar a:hover{ color:#fff; }
+.topbar svg{ width:14px; height:14px; flex:none; }
+
+.site-header{
+  position:sticky; top:0; z-index:100;
+  background:rgba(244,247,245,.9);
+  -webkit-backdrop-filter:saturate(1.4) blur(10px);
+  backdrop-filter:saturate(1.4) blur(10px);
+  border-bottom:1px solid transparent;
+  transition:border-color .25s ease, background .25s ease, box-shadow .25s ease;
+}
+.site-header.is-stuck{ border-bottom-color:var(--line); background:rgba(244,247,245,.97); box-shadow:0 10px 30px -26px rgba(10,64,61,.65); }
+.site-header__in{ display:flex; align-items:center; justify-content:space-between; gap:1.5rem; padding-block:.9rem; transition:padding .25s ease; }
+.site-header.is-stuck .site-header__in{ padding-block:.6rem; }
+
+.brand{ display:flex; align-items:center; gap:.7rem; text-decoration:none; }
+.brand__mark{ width:42px; height:42px; flex:none; }
+.brand__name{ font-family:var(--ff-display); font-size:1.26rem; line-height:1.02; letter-spacing:-.015em; display:block; }
+.brand__sub{ display:block; font-family:var(--ff-body); font-size:.6rem; font-weight:600; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); margin-top:.22rem; }
+
+.nav{ display:flex; align-items:center; gap:.2rem; }
+.nav a{ text-decoration:none; font-size:.92rem; font-weight:500; color:var(--ink-2); padding:.5rem .75rem; position:relative; border-radius:var(--radius); }
+.nav a::after{
+  content:""; position:absolute; left:.75rem; right:.75rem; bottom:.3rem; height:1.5px;
+  background:var(--clay); transform:scaleX(0); transform-origin:left; transition:transform .22s ease;
+}
+.nav a:hover{ color:var(--petrol); }
+.nav a:hover::after,.nav a.is-active::after{ transform:scaleX(1); }
+
+.nav-toggle{
+  display:none; align-items:center; gap:.55rem; background:transparent;
+  border:1px solid var(--line-strong); border-radius:var(--radius); padding:.55rem .8rem;
+  font-size:.85rem; font-weight:600; color:var(--petrol); cursor:pointer;
+}
+.nav-toggle i{ display:block; width:16px; height:1.6px; background:currentColor; position:relative; }
+.nav-toggle i::before,.nav-toggle i::after{ content:""; position:absolute; left:0; width:16px; height:1.6px; background:currentColor; transition:transform .2s ease; }
+.nav-toggle i::before{ top:-5px; } .nav-toggle i::after{ top:5px; }
+.nav-toggle[aria-expanded="true"] i{ background:transparent; }
+.nav-toggle[aria-expanded="true"] i::before{ transform:translateY(5px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] i::after{ transform:translateY(-5px) rotate(-45deg); }
+
+.mobile-panel{ display:none; border-top:1px solid var(--line); background:var(--paper); }
+.mobile-panel.is-open{ display:block; }
+.mobile-panel ul{ list-style:none; padding:.4rem 0 1.3rem; display:flex; flex-direction:column; }
+.mobile-panel a{ text-decoration:none; padding:.9rem .1rem; font-weight:500; border-bottom:1px solid var(--line); }
+.mobile-panel .btn{ margin-top:1.15rem; }
+
+/* ---------- hero ---------- */
+.hero{ background:var(--paper); padding-block:clamp(2.75rem,6vw,5.25rem) clamp(3.5rem,7vw,6rem); position:relative; overflow:hidden; }
+.hero__grid{ display:grid; grid-template-columns:minmax(0,1.02fr) minmax(0,1fr); gap:clamp(2.5rem,5vw,4.5rem); align-items:center; }
+.hero__copy{ max-width:36rem; }
+.hero__actions{ display:flex; flex-wrap:wrap; gap:.75rem; }
+.hero__note{ font-size:.86rem; color:var(--muted); display:flex; align-items:center; gap:.5rem; }
+.hero__note svg{ width:15px; height:15px; color:var(--petrol); flex:none; }
+
+.hero__figure{ position:relative; }
+.hero__art{
+  width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; object-position:center 38%;
+  border-radius:var(--radius-lg); background:var(--paper-2);
+  border:1px solid var(--line); box-shadow:var(--shadow-soft);
+}
+.hero__card{
+  position:absolute; left:-1.5rem; bottom:-1.75rem; width:min(19rem, 78%);
+  background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-lg);
+  padding:1.15rem 1.25rem; box-shadow:var(--shadow-lift); display:flex; gap:.9rem; align-items:flex-start;
+}
+.hero__card svg{ width:30px; height:30px; flex:none; color:var(--petrol); }
+.hero__card p{ font-size:.88rem; color:var(--muted); line-height:1.5; }
+.hero__card strong{ display:block; font-size:.95rem; color:var(--ink); font-weight:600; margin-bottom:.15rem; }
+
+.figures{ display:flex; flex-wrap:wrap; gap:2rem 2.75rem; padding-top:.6rem; }
+.figure__num{ font-family:var(--ff-display); font-size:2.1rem; line-height:1; color:var(--petrol); font-variant-numeric:tabular-nums; }
+.figure__label{ font-size:.8rem; color:var(--muted); margin-top:.3rem; max-width:15ch; line-height:1.4; }
+
+/* ---------- franja de capacidades ---------- */
+.strip{ background:var(--surface); border-block:1px solid var(--line); }
+.strip__in{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1px; background:var(--line); }
+.strip__item{ background:var(--surface); padding:1.6rem clamp(1rem,2vw,1.75rem); display:flex; gap:.85rem; align-items:flex-start; }
+.strip__item svg{ width:20px; height:20px; color:var(--petrol); flex:none; margin-top:.15rem; }
+.strip__item span{ font-size:.9rem; line-height:1.45; color:var(--ink-2); }
+
+/* ---------- nosotros ---------- */
+.split{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.05fr); gap:clamp(2.25rem,5vw,4.5rem); align-items:center; }
+.split--reverse .split__media{ order:2; }
+.split__media{ position:relative; }
+.split__art{
+  width:100%; height:auto; aspect-ratio:5/4; object-fit:cover; object-position:22% 38%;
+  border-radius:var(--radius-lg); border:1px solid var(--line); background:var(--paper-2);
+}
+.split__quote{
+  margin-top:1.5rem; border-left:2px solid var(--clay); padding-left:1.15rem;
+  font-family:var(--ff-display); font-size:1.12rem; line-height:1.5; color:var(--ink-2); font-style:italic;
+}
+.split__quote cite{ display:block; font-family:var(--ff-body); font-style:normal; font-size:.79rem; letter-spacing:.09em; text-transform:uppercase; color:var(--muted); margin-top:.6rem; }
+
+.checklist{ list-style:none; padding:0; display:flex; flex-direction:column; gap:1rem; }
+.checklist li{ display:flex; gap:.85rem; align-items:flex-start; }
+.checklist svg{ width:19px; height:19px; flex:none; color:var(--petrol); margin-top:.28rem; }
+.checklist strong{ font-weight:600; }
+.checklist p{ font-size:.94rem; color:var(--muted); line-height:1.55; margin-top:.1rem; }
+
+/* ---------- servicios ---------- */
+.head-block{ max-width:44rem; margin-bottom:clamp(2.5rem,4vw,3.5rem); }
+.head-block--wide{ max-width:56rem; }
+.head-row{ display:flex; flex-wrap:wrap; gap:1.5rem 3rem; align-items:flex-end; justify-content:space-between; margin-bottom:clamp(2.5rem,4vw,3.5rem); }
+.head-row .head-block{ margin-bottom:0; }
+
+.cards{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--radius-lg); overflow:hidden; }
+.card{ background:var(--surface); padding:clamp(1.5rem,2.4vw,2rem); display:flex; flex-direction:column; gap:.75rem; transition:background .22s ease; }
+.card:hover{ background:var(--agua-soft); }
+.card__icon{ width:34px; height:34px; color:var(--petrol); }
+.card h3{ margin-top:.25rem; }
+.card p{ font-size:.94rem; color:var(--muted); line-height:1.6; }
+.card__tags{ list-style:none; padding:0; display:flex; flex-wrap:wrap; gap:.4rem; margin-top:.35rem; }
+.card__tags li{ font-size:.72rem; letter-spacing:.04em; color:var(--petrol); background:var(--agua-soft); border-radius:99px; padding:.25rem .6rem; }
+.card:hover .card__tags li{ background:var(--surface); }
+
+/* ---------- ruta de atención (secuencia real: numerada) ---------- */
+.rail{ position:relative; list-style:none; padding:0; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:clamp(1.5rem,3vw,2.5rem); }
+.rail::before{
+  content:""; position:absolute; left:0; right:0; top:26px; height:2px;
+  background:linear-gradient(90deg, var(--agua), var(--line-strong));
+}
+.step{ position:relative; padding-top:4.25rem; }
+.step__dot{
+  position:absolute; top:14px; left:0; width:26px; height:26px; border-radius:50%;
+  background:var(--surface); border:2px solid var(--petrol); display:grid; place-items:center;
+}
+.step__dot i{ width:8px; height:8px; border-radius:50%; background:var(--petrol); display:block; }
+.step__n{ font-family:var(--ff-body); font-size:.72rem; font-weight:700; letter-spacing:.16em; color:var(--clay); position:absolute; top:0; left:0; }
+.step h3{ font-size:1.18rem; margin-bottom:.5rem; }
+.step p{ font-size:.92rem; color:var(--muted); line-height:1.6; }
+.section--surface .step__dot{ background:var(--surface); }
+.section--tint .step__dot{ background:var(--paper-2); }
+
+/* ---------- galería ---------- */
+.gallery{ display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:1.1rem; grid-auto-rows:clamp(220px, 23vw, 340px); }
+.tile{
+  position:relative; overflow:hidden; border-radius:var(--radius-lg);
+  border:1px solid var(--line); background:var(--paper-2);
+  grid-column:span 2;
+}
+.tile--wide{ grid-column:span 3; }
+.tile--hero{ grid-column:span 4; }
+.tile__art--upper{ object-position:center 25%; }
+.tile__art--lower{ object-position:center 76%; }
+.tile__art{
+  width:100%; height:100%; display:block; object-fit:cover;
+  transition:transform .55s cubic-bezier(.2,.7,.3,1);
+}
+.tile:hover .tile__art{ transform:scale(1.035); }
+.tile__cap{
+  position:absolute; left:0; right:0; bottom:0; padding:1.6rem 1.1rem .95rem;
+  background:linear-gradient(180deg, rgba(7,45,43,0) 0%, rgba(7,45,43,.82) 72%);
+  color:#EDF6F3; font-size:.86rem; font-weight:500; display:flex; align-items:center; gap:.5rem;
+}
+.tile__cap span{ font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; color:var(--agua); }
+
+/* ---------- métricas ---------- */
+.metrics{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:2.5rem 2rem; }
+.metric__num{ font-family:var(--ff-display); font-size:clamp(2.4rem,4.4vw,3.5rem); line-height:1; color:#F2FAF7; font-variant-numeric:tabular-nums; }
+.metric__num small{ font-size:.5em; margin-left:.06em; }
+.metric__label{ font-size:.87rem; color:#A9CCC5; margin-top:.55rem; line-height:1.45; max-width:22ch; }
+
+/* ---------- historias ---------- */
+.story-feature{
+  display:grid; grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);
+  gap:clamp(1.75rem,4vw,3.25rem); align-items:center;
+  background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-lg);
+  padding:clamp(1.5rem,3.2vw,2.75rem); box-shadow:var(--shadow-soft); margin-bottom:1.5rem;
+}
+.story-feature__art{
+  width:100%; height:auto; aspect-ratio:4/5; object-fit:cover; object-position:center 20%;
+  border-radius:var(--radius); background:var(--agua-soft);
+}
+.story-feature blockquote{ margin:0; font-family:var(--ff-display); font-size:clamp(1.28rem,2.2vw,1.72rem); line-height:1.42; color:var(--ink); }
+.byline{ display:flex; align-items:center; gap:.8rem; margin-top:1.5rem; }
+.byline__avatar{ width:44px; height:44px; border-radius:50%; flex:none; background:var(--agua-soft); border:1px solid var(--line); }
+.byline__name{ font-weight:600; font-size:.94rem; }
+.byline__meta{ font-size:.81rem; color:var(--muted); }
+
+.stories{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.5rem; }
+.story{ background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-lg); padding:1.6rem; display:flex; flex-direction:column; gap:1rem; }
+.story__mark{ width:26px; height:20px; color:var(--agua); }
+.story p{ font-size:.97rem; color:var(--ink-2); line-height:1.62; flex:1; }
+
+/* ---------- preguntas frecuentes ---------- */
+.faq{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 clamp(2rem,4vw,3.5rem); align-items:start; }
+.faq__col{ display:flex; flex-direction:column; }
+.faq details{ border-bottom:1px solid var(--line); }
+.faq summary{
+  cursor:pointer; list-style:none; padding:1.2rem 2.25rem 1.2rem 0;
+  font-weight:600; font-size:1rem; line-height:1.45; position:relative;
+}
+.faq summary::-webkit-details-marker{ display:none; }
+.faq summary::after{
+  content:""; position:absolute; right:.35rem; top:1.5rem; width:10px; height:10px;
+  border-right:2px solid var(--petrol); border-bottom:2px solid var(--petrol);
+  transform:rotate(45deg); transition:transform .2s ease, top .2s ease;
+}
+.faq details[open] summary::after{ transform:rotate(-135deg); top:1.75rem; }
+.faq summary:hover{ color:var(--petrol); }
+.faq p{ padding:0 2.25rem 1.35rem 0; color:var(--muted); font-size:.95rem; line-height:1.62; }
+
+/* ---------- llamado final ---------- */
+.cta-band{ display:grid; grid-template-columns:minmax(0,1.25fr) minmax(0,1fr); gap:clamp(1.75rem,4vw,3rem); align-items:center; }
+.cta-band__actions{ display:flex; flex-wrap:wrap; gap:.75rem; }
+
+/* ---------- contacto ---------- */
+.contact{ display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr); gap:clamp(2rem,4.5vw,4rem); align-items:start; }
+.form{ background:var(--surface); border:1px solid var(--line); border-radius:var(--radius-lg); padding:clamp(1.5rem,3vw,2.25rem); box-shadow:var(--shadow-soft); }
+.field{ display:flex; flex-direction:column; gap:.4rem; margin-bottom:1.05rem; }
+.field label{ font-size:.82rem; font-weight:600; letter-spacing:.02em; }
+.field .req{ color:var(--clay); }
+.field input,.field select,.field textarea{
+  border:1px solid var(--line-strong); border-radius:var(--radius); background:var(--paper);
+  padding:.72rem .85rem; font-size:.95rem; width:100%; transition:border-color .2s ease, background .2s ease;
+}
+.field input:focus,.field select:focus,.field textarea:focus{ background:var(--surface); border-color:var(--petrol); outline:none; box-shadow:0 0 0 3px rgba(15,90,85,.12); }
+.field textarea{ resize:vertical; min-height:110px; }
+.field--row{ display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:0; }
+.field__error{ font-size:.79rem; color:var(--clay); min-height:1rem; }
+.field.has-error input,.field.has-error select,.field.has-error textarea{ border-color:var(--clay); }
+.consent{ display:flex; gap:.7rem; align-items:flex-start; font-size:.82rem; color:var(--muted); line-height:1.5; margin:.4rem 0 1.25rem; }
+.consent input{ width:auto; margin-top:.25rem; accent-color:var(--petrol); flex:none; }
+.consent a{ color:var(--petrol); }
+.form__ok{
+  display:none; gap:.75rem; align-items:flex-start; background:var(--agua-soft);
+  border:1px solid var(--agua); border-radius:var(--radius); padding:1rem 1.1rem; font-size:.92rem; color:var(--petrol-2);
+}
+.form__ok.is-visible{ display:flex; }
+.form__ok svg{ width:20px; height:20px; flex:none; margin-top:.15rem; }
+
+.info{ display:flex; flex-direction:column; gap:1.5rem; }
+.info__list{ list-style:none; padding:0; display:flex; flex-direction:column; gap:1.15rem; }
+.info__list li{ display:flex; gap:.9rem; align-items:flex-start; }
+.info__list svg{ width:19px; height:19px; color:var(--petrol); flex:none; margin-top:.3rem; }
+.info__list dt{ font-size:.75rem; letter-spacing:.13em; text-transform:uppercase; color:var(--muted); margin-bottom:.15rem; }
+.info__list dd{ margin:0; font-size:.97rem; line-height:1.55; }
+.info__list a{ text-decoration:none; border-bottom:1px solid var(--line-strong); }
+.info__list a:hover{ border-color:var(--petrol); color:var(--petrol); }
+.map{ border:1px solid var(--line); border-radius:var(--radius-lg); overflow:hidden; background:var(--paper-2); }
+.map__frame{ width:100%; height:300px; display:block; border:0; background:var(--paper-2); }
+/* Sustituto del mapa cuando el iframe de Google no puede cargarse (vista previa del artifact). */
+.map__static{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:.55rem; height:300px; padding:1.5rem; background:var(--paper-2); text-align:center; }
+.map__static svg{ width:30px; height:30px; color:var(--clay); }
+.map__static strong{ font-weight:600; }
+.map__static .map__note{ font-size:.82rem; color:var(--muted); max-width:34ch; }
+.map__foot{ padding:.85rem 1.1rem; font-size:.84rem; color:var(--muted); background:var(--surface); border-top:1px solid var(--line); display:flex; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
+
+/* ---------- pie ---------- */
+.footer{ background:var(--petrol-3); color:#A9CCC5; padding-block:clamp(3rem,5vw,4.5rem) 2rem; }
+.footer h2,.footer h3{ color:#F2FAF7; }
+.footer__grid{ display:grid; grid-template-columns:1.5fr 1fr 1fr 1.2fr; gap:2.5rem; }
+.footer__brand{ display:flex; align-items:center; gap:.7rem; text-decoration:none; color:#F2FAF7; margin-bottom:1.1rem; }
+.footer__brand .brand__sub{ color:#7FA9A2; }
+.footer p{ font-size:.9rem; line-height:1.6; }
+.footer__title{ font-family:var(--ff-body); font-size:.74rem; letter-spacing:.15em; text-transform:uppercase; color:#7FA9A2; margin-bottom:1rem; }
+.footer ul{ list-style:none; padding:0; display:flex; flex-direction:column; gap:.6rem; font-size:.9rem; }
+.footer a{ text-decoration:none; color:#C5DFDA; }
+.footer a:hover{ color:#fff; }
+.footer ul.footer__social{ flex-direction:row; gap:.6rem; margin-top:1.25rem; }
+.footer__social a{ width:38px; height:38px; border:1px solid rgba(169,204,197,.28); border-radius:var(--radius); display:grid; place-items:center; }
+.footer__social a:hover{ border-color:#7FC8BE; background:rgba(127,200,190,.12); }
+.footer__social svg{ width:17px; height:17px; }
+.footer__legal{
+  margin-top:clamp(2.5rem,4vw,3.5rem); padding-top:1.5rem; border-top:1px solid rgba(169,204,197,.2);
+  display:flex; flex-wrap:wrap; gap:.6rem 1.75rem; justify-content:space-between; font-size:.81rem; color:#7FA9A2;
+}
+.footer__legal ul{ flex-direction:row; flex-wrap:wrap; gap:.6rem 1.5rem; font-size:.81rem; }
+
+/* ---------- flotantes ---------- */
+.wa{
+  position:fixed; right:clamp(1rem,3vw,2rem); bottom:clamp(1rem,3vw,2rem); z-index:90;
+  display:inline-flex; align-items:center; gap:.6rem; background:var(--petrol);
+  color:#fff; text-decoration:none; font-weight:600; font-size:.9rem;
+  padding:.8rem 1.15rem; border-radius:99px; box-shadow:var(--shadow-lift);
+  transition:background .2s ease, transform .2s ease;
+}
+.wa:hover{ background:var(--petrol-2); transform:translateY(-2px); }
+.wa svg{ width:20px; height:20px; flex:none; }
+.wa span{ display:inline; }
+
+/* ---------- animación de entrada ---------- */
+.js [data-reveal]{ opacity:0; transform:translateY(18px); }
+.js [data-reveal].is-in{ opacity:1; transform:none; transition:opacity .7s cubic-bezier(.2,.7,.3,1), transform .7s cubic-bezier(.2,.7,.3,1); }
+
+/* ---------- adaptable ---------- */
+@media (max-width: 1000px){
+  .hero__grid{ grid-template-columns:1fr; }
+
+  .hero__card{ left:auto; right:0; bottom:-1.25rem; }
+  .split,.contact,.cta-band,.story-feature{ grid-template-columns:1fr; }
+  .split--reverse .split__media{ order:0; }
+  .cards{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .strip__in{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .rail{ grid-template-columns:repeat(2,minmax(0,1fr)); row-gap:2.5rem; }
+  .rail::before{ display:none; }
+  .stories{ grid-template-columns:1fr; }
+  .faq{ grid-template-columns:1fr; }
+  .metrics{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .footer__grid{ grid-template-columns:1fr 1fr; }
+  .gallery{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .tile,.tile--wide,.tile--hero{ grid-column:span 1; }
+}
+@media (max-width: 1120px){
+  .header-cta{ display:none; }
+}
+@media (max-width: 940px){
+  .nav{ display:none; }
+  .nav-toggle{ display:inline-flex; }
+  .topbar__group--left{ display:none; }
+}
+@media (max-width: 640px){
+  .cards{ grid-template-columns:1fr; }
+  .strip__in{ grid-template-columns:1fr; }
+  .rail{ grid-template-columns:1fr; }
+  .gallery{ grid-template-columns:1fr; grid-auto-rows:250px; }
+  .tile,.tile--wide,.tile--hero{ grid-column:span 1; }
+  .metrics{ grid-template-columns:1fr 1fr; }
+  .footer__grid{ grid-template-columns:1fr; }
+  .field--row{ grid-template-columns:1fr; }
+  .hero__card{ position:static; width:100%; margin-top:1rem; }
+  .wa span{ display:none; }
+  .wa{ padding:.9rem; }
+}
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *,*::before,*::after{ animation-duration:.001ms !important; transition-duration:.001ms !important; }
+  .js [data-reveal]{ opacity:1; transform:none; }
+}
+@media print{
+  .site-header,.topbar,.wa,.mobile-panel{ display:none !important; }
+}
+
+/* ---------- sistema de ilustración (line-art propia) ---------- */
+.il{ color:var(--petrol); }
+.il .s{ fill:none; stroke:currentColor; stroke-width:5; stroke-linecap:round; stroke-linejoin:round; }
+.il .s-thin{ stroke-width:3; }
+.il .s-hair{ stroke-width:2; }
+.il .limb{ fill:none; stroke:currentColor; stroke-width:11; stroke-linecap:round; stroke-linejoin:round; }
+.il .limb-sm{ stroke-width:8; }
+.il .accent{ stroke:var(--clay); }
+.il .f-agua{ fill:var(--agua-soft); }
+.il .f-clay{ fill:var(--clay-soft); }
+.il .f-paper{ fill:var(--paper-2); }
+.il .f-white{ fill:var(--surface); }
+.il .f-petrol{ fill:var(--petrol); }
+.il .shade{ fill:var(--petrol); opacity:.08; }
+.il .glow{ fill:var(--agua-soft); }
+</style>
+</head>
+<body>
+<!-- ============================================================
+     DATOS DE MARCADOR DE POSICIÓN
+     Teléfonos, direcciones, cifras y testimonios son ejemplos.
+     Reemplácelos por la información real del centro antes de publicar.
+     ============================================================ -->
+<a class="skip" href="#contenido">Saltar al contenido principal</a>
+
+<div class="topbar">
+  <div class="wrap topbar__in">
+    <div class="topbar__group topbar__group--left">
+      <span>Av. 5 Nte. #37 A 120 &middot; Cali, Valle del Cauca</span>
+      <span>Lun a Vie 8:00&nbsp;a.m. &ndash; 6:00&nbsp;p.m. &middot; Sáb 8:00&nbsp;a.m. &ndash; 12:00&nbsp;m.</span>
+    </div>
+    <div class="topbar__group">
+      <a href="https://wa.me/573185550180" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.5 14.1c-.2.7-1.3 1.3-1.8 1.3-.5.1-1 .1-1.7-.1a12 12 0 0 1-5.6-4.9c-.4-.7-.9-1.6-.9-2.5 0-.9.5-1.4.7-1.6.2-.2.4-.3.6-.3h.5c.2 0 .4 0 .6.4l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6.5.8 1 1.4 1.7 2 .6.4 1 .6 1.3.8.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.6-.1l1.8.8c.3.1.4.2.5.3v1.3Z"/></svg>
+        WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+<header class="site-header" id="cabecera">
+  <div class="wrap site-header__in">
+    <a class="brand" href="#inicio" aria-label="Centro de Rehabilitación Versalles, ir al inicio">
+      <svg class="brand__mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <rect width="48" height="48" rx="10" fill="#0F5A55"/>
+        <path d="M13 14 L24 35 L33 18" stroke="#FFFFFF" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="35" cy="14" r="4" fill="#BE5F3B"/>
+      </svg>
+      <span>
+        <span class="brand__name">Versalles</span>
+        <span class="brand__sub">Centro de Rehabilitación</span>
+      </span>
+    </a>
+
+    <nav class="nav" id="nav-principal" aria-label="Navegación principal">
+      <a href="#nosotros">Nosotros</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#ruta">Ruta de atención</a>
+      <a href="#instalaciones">Instalaciones</a>
+      <a href="#historias">Historias</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
+    <a class="btn btn--primary header-cta" href="#contacto">
+      Agenda tu valoración
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-movil" id="btn-menu">
+      <i aria-hidden="true"></i> Menú
+    </button>
+  </div>
+
+  <div class="mobile-panel" id="menu-movil">
+    <div class="wrap">
+      <ul>
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#ruta">Ruta de atención</a></li>
+        <li><a href="#instalaciones">Instalaciones</a></li>
+        <li><a href="#historias">Historias de éxito</a></li>
+        <li><a href="#preguntas">Preguntas frecuentes</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <a class="btn btn--primary btn--wide" href="#contacto">Agenda tu valoración</a>
+    </div>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero" id="inicio">
+    <div class="wrap hero__grid">
+      <div class="hero__copy stack gap-md">
+        <p class="eyebrow">Rehabilitación integral</p>
+        <h1 class="h-display">Tu autonomía es la meta; el plan lo construimos <span class="em-serif">contigo</span>.</h1>
+        <p class="lead">Acompañamos a personas con lesiones neurológicas, ortopédicas y neuromusculares con un equipo interdisciplinario, un plan de tratamiento medible y espacios diseñados para la accesibilidad.</p>
+        <div class="hero__actions">
+          <a class="btn btn--primary" href="#contacto">
+            Agenda tu valoración
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn--ghost" href="#nosotros">Conoce el centro</a>
+        </div>
+        <p class="hero__note">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 4 6v6c0 5 3.4 9.3 8 10 4.6-.7 8-5 8-10V6l-8-4Z"/><path d="m9 12 2 2 4-4"/></svg>
+          Atención particular y por convenio con EPS, ARL y medicina prepagada.
+        </p>
+
+        <div class="figures">
+          <div>
+            <div class="figure__num">3</div>
+            <div class="figure__label">años acompañando procesos de rehabilitación</div>
+          </div>
+          <div>
+            <div class="figure__num">2.400<small>+</small></div>
+            <div class="figure__label">pacientes atendidos en el Valle del Cauca</div>
+          </div>
+          <div>
+            <div class="figure__num">9</div>
+            <div class="figure__label">especialidades en un mismo lugar</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__figure" data-reveal>
+        <img class="hero__art" src="images/hero-fisioterapia.jpg" width="1000" height="667" alt="Fisioterapeuta sostiene las manos de un paciente con prótesis de pierna durante un ejercicio de equilibrio en el gimnasio del centro.">
+
+        <div class="hero__card">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4.5" width="18" height="17" rx="3"/><path d="M8 2.5v4M16 2.5v4M3 10h18M8.5 15.5l2.2 2.2 4.3-4.3"/></svg>
+          <p><strong>Primera valoración con fisiatría</strong>Definimos objetivos, frecuencia y duración del plan desde la primera cita.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FRANJA DE CAPACIDADES ===================== -->
+  <div class="strip">
+    <div class="wrap">
+      <div class="strip__in">
+        <div class="strip__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M7 12h10"/></svg>
+          <span><strong>Equipo interdisciplinario</strong><br>Fisiatría, fisioterapia, terapia ocupacional, fonoaudiología y psicología.</span>
+        </div>
+        <div class="strip__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18M6 20v-9l6-5 6 5v9"/><path d="M10 20v-5h4v5"/></svg>
+          <span><strong>Instalaciones accesibles</strong><br>Rampas, baños adaptados y circulación sin barreras en toda la sede.</span>
+        </div>
+        <div class="strip__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19V5a1 1 0 0 1 1-1h11l4 4v11a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1Z"/><path d="M8 12h8M8 16h5M8 8h4"/></svg>
+          <span><strong>Historia clínica digital</strong><br>Metas medibles y reportes de avance compartidos con la familia.</span>
+        </div>
+        <div class="strip__item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.4-7-10a7 7 0 0 1 14 0c0 5.6-7 10-7 10Z"/><circle cx="12" cy="11" r="2.6"/></svg>
+          <span><strong>Una sola sede, todo el proceso</strong><br>Terapias, ayudas técnicas y controles sin desplazamientos adicionales.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== NOSOTROS ===================== -->
+  <section class="section section--paper" id="nosotros">
+    <div class="wrap split">
+      <div class="split__media" data-reveal>
+        <img class="split__art" src="images/acompanamiento.jpg" width="900" height="600" loading="lazy" alt="Terapeuta acompaña a un adulto mayor mientras realiza un ejercicio de hombros en un espacio amplio e iluminado.">
+      </div>
+
+      <div class="split__content stack gap-md">
+        <ul class="bars" aria-hidden="true"><i></i><i></i></ul>
+        <p class="eyebrow">Quiénes somos</p>
+        <h2 class="h-2">Un centro pensado desde la experiencia real del paciente.</h2>
+        <p class="lead">El Centro de Rehabilitación Versalles nació en Cali con una convicción simple: la recuperación no ocurre solo en la camilla. Ocurre cuando el equipo clínico, la familia y el entorno trabajan sobre el mismo plan.</p>
+        <ul class="checklist">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="m8 12.3 2.7 2.7L16 9.5"/></svg>
+            <div><strong class="h-4">Un plan por persona, no por diagnóstico</strong><p>Cada proceso arranca con una valoración funcional y objetivos que el paciente puede reconocer en su vida diaria.</p></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="m8 12.3 2.7 2.7L16 9.5"/></svg>
+            <div><strong class="h-4">La familia hace parte del equipo</strong><p>Entrenamos al cuidador en transferencias, posicionamiento y ejercicios para casa desde la primera semana.</p></div>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="m8 12.3 2.7 2.7L16 9.5"/></svg>
+            <div><strong class="h-4">Medimos el avance y lo mostramos</strong><p>Escalas funcionales aplicadas cada cuatro semanas, con informe escrito para el paciente y su médico tratante.</p></div>
+          </li>
+        </ul>
+        <blockquote class="split__quote">
+          Nuestra meta nunca es el número de sesiones. Es el día en que la persona vuelve a hacer, por sí misma, algo que había dejado de hacer.
+          <cite>Dirección médica &middot; Centro de Rehabilitación Versalles</cite>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICIOS ===================== -->
+  <section class="section section--surface" id="servicios">
+    <div class="wrap">
+      <div class="head-row">
+        <div class="head-block stack gap-sm" data-reveal>
+          <ul class="bars" aria-hidden="true"><i></i><i></i></ul>
+          <p class="eyebrow">Servicios</p>
+          <h2 class="h-2">Nueve especialidades trabajando sobre un mismo plan.</h2>
+          <p class="body-muted">Todas las terapias ocurren en la misma sede y comparten historia clínica, así que el avance de una sesión se refleja en la siguiente.</p>
+        </div>
+        <a class="btn btn--ghost" href="#contacto">Consulta disponibilidad</a>
+      </div>
+
+      <div class="cards" data-reveal>
+        <article class="card">
+          <svg class="card__icon il" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <circle cx="20" cy="20" r="15" class="s s-thin"/>
+            <path d="M20 8v10l7 5" class="s s-thin"/>
+            <circle cx="20" cy="20" r="2.4" class="f-petrol"/>
+          </svg>
+          <h3 class="h-3">Fisioterapia neurológica</h3>
+          <p>Reeducación de la marcha, control postural y manejo de la espasticidad después de un ACV, trauma craneoencefálico o lesión medular.</p>
+          <ul class="card__tags"><li>ACV</li><li>Lesión medular</li><li>Parkinson</li></ul>
+        </article>
+
+        <article class="card">
+          <svg class="card__icon il" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <path d="M12 30V16a3 3 0 0 1 6 0v4" class="s s-thin"/>
+            <path d="M18 20v-2a3 3 0 0 1 6 0v2" class="s s-thin"/>
+            <path d="M24 20v-1a3 3 0 0 1 6 0v9a8 8 0 0 1-8 8h-3a8 8 0 0 1-7-4" class="s s-thin"/>
+          </svg>
+          <h3 class="h-3">Terapia ocupacional</h3>
+          <p>Recuperar la independencia en lo cotidiano: vestirse, cocinar, escribir, volver al trabajo o al estudio con las adaptaciones necesarias.</p>
+          <ul class="card__tags"><li>Mano</li><li>Vida diaria</li><li>Reintegro laboral</li></ul>
+        </article>
+
+        <article class="card">
+          <svg class="card__icon il" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <path d="M20 6a7 7 0 0 0-7 7v6a7 7 0 0 0 14 0v-6a7 7 0 0 0-7-7Z" class="s s-thin"/>
+            <path d="M9 18v2a11 11 0 0 0 22 0v-2M20 31v5M15 36h10" class="s s-thin"/>
+          </svg>
+          <h3 class="h-3">Fonoaudiología</h3>
+          <p>Intervención en lenguaje, habla, voz y trastornos de la deglución, con acompañamiento nutricional cuando el caso lo requiere.</p>
+          <ul class="card__tags"><li>Afasia</li><li>Disfagia</li><li>Voz</li></ul>
+        </article>
+
+        <article class="card">
+          <svg class="card__icon il" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <path d="M6 20h4M30 20h4" class="s s-thin"/>
+            <rect x="10" y="13" width="5" height="14" rx="2" class="s s-thin"/>
+            <rect x="25" y="13" width="5" height="14" rx="2" class="s s-thin"/>
+            <path d="M15 20h10" class="s s-thin accent"/>
+          </svg>
+          <h3 class="h-3">Rehabilitación ortopédica y deportiva</h3>
+          <p>Postoperatorio de rodilla, cadera y hombro, lesiones deportivas y dolor musculoesquelético crónico con progresión de carga controlada.</p>
+          <ul class="card__tags"><li>Postquirúrgico</li><li>Dolor crónico</li><li>Retorno deportivo</li></ul>
+        </article>
+
+        <article class="card">
+          <svg class="card__icon il" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <path d="M5 24c3.5 0 3.5 3 7 3s3.5-3 7-3 3.5 3 7 3 3.5-3 7-3" class="s s-thin"/>
+            <path d="M5 31c3.5 0 3.5 3 7 3s3.5-3 7-3 3.5 3 7 3 3.5-3 7-3" class="s s-thin"/>
+            <circle cx="24" cy="11" r="4" class="s s-thin f-agua"/>
+            <path d="M12 20l7-5 6 3" class="s s-thin"/>
+          </svg>
+          <h3 class="h-3">Hidroterapia</h3>
+          <p>Piscina climatizada para trabajar movilidad y fuerza con carga reducida, ideal en fases tempranas y en dolor articular severo.</p>
+          <ul class="card__tags"><li>Baja carga</li><li>Movilidad</li><li>Piscina climatizada</li></ul>
+        </article>
+
+        <article class="card">
+          <svg class="card__icon il" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <circle cx="17" cy="27" r="9" class="s s-thin"/>
+            <circle cx="17" cy="27" r="2" class="f-petrol"/>
+            <circle cx="31" cy="32" r="3.5" class="s s-thin"/>
+            <path d="M12 18h12M13 18l4 9M24 18l6 10" class="s s-thin"/>
+            <circle cx="20" cy="9" r="3.5" class="s s-thin f-clay"/>
+          </svg>
+          <h3 class="h-3">Ayudas técnicas y sillas de ruedas</h3>
+          <p>Prescripción, medición y adaptación de sillas de ruedas, órtesis y bastones, con entrenamiento en su uso seguro dentro y fuera de casa.</p>
+          <ul class="card__tags"><li>Sillas a medida</li><li>Órtesis</li><li>Entrenamiento</li></ul>
+        </article>
+
+        <article class="card">
+          <svg class="card__icon il" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <path d="M13 7v9a7 7 0 0 0 14 0V7" class="s s-thin"/>
+            <path d="M10 7h6M24 7h6" class="s s-thin"/>
+            <path d="M20 30v-7" class="s s-thin"/>
+            <circle cx="20" cy="33" r="4" class="s s-thin f-clay"/>
+          </svg>
+          <h3 class="h-3">Medicina física y rehabilitación</h3>
+          <p>La consulta de fisiatría abre y cierra cada proceso: define el diagnóstico funcional, ordena las terapias y ajusta el plan según los resultados.</p>
+          <ul class="card__tags"><li>Fisiatría</li><li>Diagnóstico funcional</li><li>Junta médica</li></ul>
+        </article>
+
+        <article class="card">
+          <svg class="card__icon il" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <path d="M25 33v-4a9 9 0 0 0 4-7.5C29 15 24.7 10 19 10s-10 4.5-10 10c0 3 1.5 5 3 6.5V33" class="s s-thin"/>
+            <path d="M12 33h13" class="s s-thin"/>
+            <path d="M19 20l3-3M19 20l-3 3" class="s s-thin accent"/>
+          </svg>
+          <h3 class="h-3">Psicología y neuropsicología</h3>
+          <p>Acompañamiento en el duelo por la pérdida funcional, manejo de la ansiedad y valoración de memoria, atención y funciones ejecutivas.</p>
+          <ul class="card__tags"><li>Paciente y familia</li><li>Cognición</li><li>Adherencia</li></ul>
+        </article>
+
+        <article class="card">
+          <svg class="card__icon il" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <path d="M20 8v13" class="s s-thin"/>
+            <path d="M20 21c0 6-3 11-7 11-2.5 0-4-1.5-4-4 0-6 3-14 6-16" class="s s-thin"/>
+            <path d="M20 21c0 6 3 11 7 11 2.5 0 4-1.5 4-4 0-6-3-14-6-16" class="s s-thin"/>
+          </svg>
+          <h3 class="h-3">Terapia respiratoria</h3>
+          <p>Higiene bronquial, entrenamiento de la musculatura respiratoria y educación al cuidador en pacientes neurológicos y postquirúrgicos.</p>
+          <ul class="card__tags"><li>Higiene bronquial</li><li>Destete de oxígeno</li><li>Cuidador</li></ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== RUTA DE ATENCIÓN (secuencia) ===================== -->
+  <section class="section section--tint" id="ruta">
+    <div class="wrap">
+      <div class="head-block stack gap-sm" data-reveal>
+        <ul class="bars" aria-hidden="true"><i></i><i></i></ul>
+        <p class="eyebrow">Ruta de atención</p>
+        <h2 class="h-2">Cómo es el proceso, paso a paso.</h2>
+        <p class="body-muted">Cuatro etapas con tiempos claros. Sabes desde el primer día qué sigue, quién te acompaña y cómo se mide el avance.</p>
+      </div>
+
+      <ol class="rail" data-reveal>
+        <li class="step">
+          <span class="step__n">PASO 01</span>
+          <span class="step__dot" aria-hidden="true"><i></i></span>
+          <h3>Contacto y agendamiento</h3>
+          <p>Nos escribes por WhatsApp o teléfono. Verificamos convenio o tarifa particular y agendamos la valoración en menos de 48 horas hábiles.</p>
+        </li>
+        <li class="step">
+          <span class="step__n">PASO 02</span>
+          <span class="step__dot" aria-hidden="true"><i></i></span>
+          <h3>Valoración interdisciplinaria</h3>
+          <p>Fisiatría y las terapias pertinentes evalúan función, dolor y entorno. Salimos con objetivos escritos y una frecuencia definida.</p>
+        </li>
+        <li class="step">
+          <span class="step__n">PASO 03</span>
+          <span class="step__dot" aria-hidden="true"><i></i></span>
+          <h3>Plan de tratamiento</h3>
+          <p>Sesiones en sede más rutina para casa. Cada cuatro semanas se reevalúa con escalas funcionales y se ajusta lo que haga falta.</p>
+        </li>
+        <li class="step">
+          <span class="step__n">PASO 04</span>
+          <span class="step__dot" aria-hidden="true"><i></i></span>
+          <h3>Reintegro y seguimiento</h3>
+          <p>Preparamos el regreso a la casa, al estudio o al trabajo, con adaptaciones del entorno y controles de sostenimiento.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ===================== GALERÍA ===================== -->
+  <section class="section section--surface" id="instalaciones">
+    <div class="wrap">
+      <div class="head-row">
+        <div class="head-block stack gap-sm" data-reveal>
+          <ul class="bars" aria-hidden="true"><i></i><i></i></ul>
+          <p class="eyebrow">Instalaciones</p>
+          <h2 class="h-2">Espacios amplios, accesibles y bien equipados.</h2>
+          <p class="body-muted">Todo el centro está en un solo nivel, con circulación libre de barreras y equipos pensados para acompañar cada etapa del proceso.</p>
+        </div>
+        <a class="btn btn--ghost" href="#contacto">Agenda una visita guiada</a>
+      </div>
+
+      <div class="gallery" data-reveal>
+        <figure class="tile tile--hero">
+          <img class="tile__art" src="images/sala-fisioterapia.jpg" width="1000" height="667" loading="lazy" alt="Fisioterapeuta guía a un paciente en un ejercicio de movilidad sobre colchoneta en una sala amplia e iluminada.">
+          <figcaption class="tile__cap"><span>01</span> Sala de fisioterapia</figcaption>
+        </figure>
+
+        <figure class="tile">
+          <img class="tile__art" src="images/terapia-de-mano.jpg" width="600" height="1066" loading="lazy" alt="Terapeuta moviliza la muñeca y los dedos de una paciente durante una sesión de terapia de mano.">
+          <figcaption class="tile__cap"><span>02</span> Terapia de mano</figcaption>
+        </figure>
+
+        <figure class="tile">
+          <img class="tile__art" src="images/electroterapia.jpg" width="600" height="1066" loading="lazy" alt="Profesional coloca electrodos de electroestimulación sobre la rodilla de un paciente.">
+          <figcaption class="tile__cap"><span>03</span> Electroterapia y agentes físicos</figcaption>
+        </figure>
+
+        <figure class="tile tile--hero">
+          <img class="tile__art tile__art--upper" src="images/rehabilitacion-ortopedica.jpg" width="1000" height="1500" loading="lazy" alt="Fisioterapeuta moviliza la rodilla de un paciente acostado en la camilla durante una sesión de rehabilitación ortopédica.">
+          <figcaption class="tile__cap"><span>04</span> Rehabilitación ortopédica</figcaption>
+        </figure>
+
+        <figure class="tile tile--wide">
+          <img class="tile__art tile__art--lower" src="images/equilibrio.jpg" width="800" height="1421" loading="lazy" alt="Paciente entrena el equilibrio sobre una tabla propioceptiva acompañada por su terapeuta.">
+          <figcaption class="tile__cap"><span>05</span> Reeducación del equilibrio</figcaption>
+        </figure>
+
+        <figure class="tile tile--wide">
+          <img class="tile__art" src="images/vida-diaria.jpg" width="800" height="1422" loading="lazy" alt="Mujer usuaria de silla de ruedas trabajando en su computador en un espacio adaptado.">
+          <figcaption class="tile__cap"><span>06</span> Entrenamiento para la vida diaria</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== MÉTRICAS ===================== -->
+  <section class="section section--dark section--tight">
+    <div class="wrap">
+      <div class="metrics" data-reveal>
+        <div>
+          <div class="metric__num"><span data-count="3">0</span></div>
+          <p class="metric__label">años de operación continua en Cali</p>
+        </div>
+        <div>
+          <div class="metric__num"><span data-count="2400" data-sep="true">0</span><small>+</small></div>
+          <p class="metric__label">pacientes acompañados desde 2023</p>
+        </div>
+        <div>
+          <div class="metric__num"><span data-count="24">0</span></div>
+          <p class="metric__label">profesionales en el equipo clínico</p>
+        </div>
+        <div>
+          <div class="metric__num"><span data-count="92">0</span><small>%</small></div>
+          <p class="metric__label">de los pacientes completa el plan propuesto</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== HISTORIAS DE ÉXITO ===================== -->
+  <!-- Testimonios de ejemplo. Sustitúyalos por testimonios reales con
+       autorización escrita del paciente antes de publicar el sitio. -->
+  <section class="section section--paper" id="historias">
+    <div class="wrap">
+      <div class="head-block stack gap-sm" data-reveal>
+        <ul class="bars" aria-hidden="true"><i></i><i></i></ul>
+        <p class="eyebrow">Historias de éxito</p>
+        <h2 class="h-2">Lo que cambia no es solo el diagnóstico.</h2>
+        <p class="body-muted">Procesos reales de personas que retomaron su autonomía. Publicamos cada historia con autorización de sus protagonistas.</p>
+      </div>
+
+      <article class="story-feature" data-reveal>
+        <img class="story-feature__art" src="images/historia-destacada.jpg" width="700" height="933" loading="lazy" alt="Mujer mayor sonriendo frente a su casa, en un barrio de Cali.">
+
+        <div>
+          <blockquote>“Después de la cirugía de cadera llegué convencida de que ya no volvería a valerme por mí misma. Aquí me pusieron metas pequeñas: primero pararme, después la escalera, después la cuadra. Hoy vuelvo del mercado sin que nadie me acompañe.”</blockquote>
+          <div class="byline">
+            <svg class="byline__avatar il" viewBox="0 0 48 48" aria-hidden="true">
+              <circle cx="24" cy="24" r="24" class="f-agua"/>
+              <circle cx="24" cy="19" r="8" class="f-petrol" opacity=".85"/>
+              <path d="M9 44a15 15 0 0 1 30 0z" class="f-petrol" opacity=".85"/>
+            </svg>
+            <div>
+              <div class="byline__name">Rosa E.</div>
+              <div class="byline__meta">71 años &middot; Reemplazo de cadera &middot; Cali</div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div class="stories" data-reveal>
+        <article class="story">
+          <svg class="story__mark" viewBox="0 0 32 24" fill="currentColor" aria-hidden="true"><path d="M0 24V13C0 5.8 4.3 1 11.5 0l1.3 4C8.6 5.2 6.4 7.7 6.5 11H12v13H0Zm19 0V13C19 5.8 23.3 1 30.5 0l1.3 4c-4.2 1.2-6.4 3.7-6.3 7H31v13H19Z"/></svg>
+          <p>Después del ACV mi mamá no lograba tragar ni sostener una conversación. El trabajo conjunto de fonoaudiología y terapia ocupacional le devolvió la mesa familiar.</p>
+          <div class="byline">
+            <svg class="byline__avatar il" viewBox="0 0 48 48" aria-hidden="true">
+              <circle cx="24" cy="24" r="24" class="f-clay"/>
+              <circle cx="24" cy="19" r="8" class="f-petrol" opacity=".8"/>
+              <path d="M9 44a15 15 0 0 1 30 0z" class="f-petrol" opacity=".8"/>
+            </svg>
+            <div>
+              <div class="byline__name">Claudia R.</div>
+              <div class="byline__meta">Hija y cuidadora</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="story">
+          <svg class="story__mark" viewBox="0 0 32 24" fill="currentColor" aria-hidden="true"><path d="M0 24V13C0 5.8 4.3 1 11.5 0l1.3 4C8.6 5.2 6.4 7.7 6.5 11H12v13H0Zm19 0V13C19 5.8 23.3 1 30.5 0l1.3 4c-4.2 1.2-6.4 3.7-6.3 7H31v13H19Z"/></svg>
+          <p>La silla que usaba me lastimaba la espalda. En Versalles la midieron, la ajustaron y me enseñaron a impulsarla sin forzar el hombro. Llevo seis meses sin dolor.</p>
+          <div class="byline">
+            <svg class="byline__avatar il" viewBox="0 0 48 48" aria-hidden="true">
+              <circle cx="24" cy="24" r="24" class="f-agua"/>
+              <circle cx="24" cy="19" r="8" class="f-petrol" opacity=".85"/>
+              <path d="M9 44a15 15 0 0 1 30 0z" class="f-petrol" opacity=".85"/>
+            </svg>
+            <div>
+              <div class="byline__name">Luz Ángela P.</div>
+              <div class="byline__meta">54 años &middot; Artritis reumatoide</div>
+            </div>
+          </div>
+        </article>
+
+        <article class="story">
+          <svg class="story__mark" viewBox="0 0 32 24" fill="currentColor" aria-hidden="true"><path d="M0 24V13C0 5.8 4.3 1 11.5 0l1.3 4C8.6 5.2 6.4 7.7 6.5 11H12v13H0Zm19 0V13C19 5.8 23.3 1 30.5 0l1.3 4c-4.2 1.2-6.4 3.7-6.3 7H31v13H19Z"/></svg>
+          <p>Me operaron de rodilla en marzo y en agosto ya estaba trotando. El plan de carga progresiva y la piscina hicieron toda la diferencia.</p>
+          <div class="byline">
+            <svg class="byline__avatar il" viewBox="0 0 48 48" aria-hidden="true">
+              <circle cx="24" cy="24" r="24" class="f-clay"/>
+              <circle cx="24" cy="19" r="8" class="f-petrol" opacity=".8"/>
+              <path d="M9 44a15 15 0 0 1 30 0z" class="f-petrol" opacity=".8"/>
+            </svg>
+            <div>
+              <div class="byline__name">Julián T.</div>
+              <div class="byline__meta">29 años &middot; Reconstrucción de ligamento</div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ===================== PREGUNTAS FRECUENTES ===================== -->
+  <section class="section section--paper" id="preguntas">
+    <div class="wrap">
+      <div class="head-block stack gap-sm" data-reveal>
+        <ul class="bars" aria-hidden="true"><i></i><i></i></ul>
+        <p class="eyebrow">Preguntas frecuentes</p>
+        <h2 class="h-2">Lo que la mayoría nos pregunta antes de la primera cita.</h2>
+      </div>
+
+      <div class="faq" data-reveal>
+        <div class="faq__col">
+        <details>
+          <summary>¿Necesito orden médica para la primera valoración?</summary>
+          <p>Para la consulta particular no es necesaria: puedes agendar directamente con fisiatría. Si vas a usar tu EPS, ARL o medicina prepagada, sí requerimos la orden vigente y la autorización de tu entidad.</p>
+        </details>
+
+        <details>
+          <summary>¿Atienden por EPS, ARL o medicina prepagada?</summary>
+          <p>Trabajamos con convenios de EPS, ARL, medicina prepagada y pólizas de accidentes. Antes de agendar verificamos tu cobertura y te decimos qué documentos debes traer y si hay copago.</p>
+        </details>
+
+        <details>
+          <summary>¿Cuánto dura cada sesión y con qué frecuencia se asiste?</summary>
+          <p>Las sesiones duran entre 45 y 60 minutos. La frecuencia habitual es de dos a tres veces por semana y se define en la valoración inicial según el diagnóstico funcional y tus objetivos.</p>
+        </details>
+        </div>
+        <div class="faq__col">
+
+        <details>
+          <summary>¿Qué debo llevar a la primera cita?</summary>
+          <p>Documento de identidad, orden y autorización si aplica, resumen de historia clínica, imágenes diagnósticas recientes, la lista de medicamentos y las ayudas técnicas que uses. Ven con ropa cómoda y calzado cerrado.</p>
+        </details>
+
+        <details>
+          <summary>¿La sede es accesible para llegar en silla de ruedas o en camilla?</summary>
+          <p>Sí. Toda la atención está en un solo nivel, con rampa de acceso, puertas amplias, baños adaptados y parqueadero con bahía de descargue sobre la Av. 5 Norte.</p>
+        </details>
+
+        <details>
+          <summary>¿Ofrecen telerehabilitación o acompañamiento en casa?</summary>
+          <p>Sí. Programamos controles por videollamada para revisar la rutina domiciliaria y entrenar al cuidador. La telerehabilitación complementa las sesiones presenciales, no las reemplaza.</p>
+        </details>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ===================== LLAMADO ===================== -->
+  <section class="section section--dark section--tight">
+    <div class="wrap cta-band" data-reveal>
+      <div class="stack gap-sm">
+        <ul class="bars" aria-hidden="true"><i></i><i></i></ul>
+        <h2 class="h-2">¿No sabes por dónde empezar?</h2>
+        <p class="lead">Cuéntanos el caso y te decimos, sin costo, qué especialidad debería valorarlo primero y cómo funciona tu cobertura.</p>
+      </div>
+      <div class="cta-band__actions">
+        <a class="btn btn--light" href="https://wa.me/573185550180" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.5 14.1c-.2.7-1.3 1.3-1.8 1.3-.5.1-1 .1-1.7-.1a12 12 0 0 1-5.6-4.9c-.4-.7-.9-1.6-.9-2.5 0-.9.5-1.4.7-1.6.2-.2.4-.3.6-.3h.5c.2 0 .4 0 .6.4l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6.5.8 1 1.4 1.7 2 .6.4 1 .6 1.3.8.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.6-.1l1.8.8c.3.1.4.2.5.3v1.3Z"/></svg>
+          Escríbenos por WhatsApp
+        </a>
+        <a class="btn btn--outline-light" href="#contacto">Déjanos tus datos</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACTO ===================== -->
+  <section class="section section--surface" id="contacto">
+    <div class="wrap">
+      <div class="head-block head-block--wide stack gap-sm" data-reveal>
+        <ul class="bars" aria-hidden="true"><i></i><i></i></ul>
+        <p class="eyebrow">Contacto</p>
+        <h2 class="h-2">Agenda tu valoración</h2>
+        <p class="body-muted">Déjanos tus datos y un profesional del centro te contacta el mismo día hábil para confirmar horario y documentos.</p>
+      </div>
+
+      <div class="contact">
+        <form class="form" id="form-cita" novalidate>
+          <div class="field--row">
+            <div class="field">
+              <label for="nombre">Nombre completo <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="nombre" name="nombre" autocomplete="name" required aria-describedby="err-nombre">
+              <p class="field__error" id="err-nombre"></p>
+            </div>
+            <div class="field">
+              <label for="telefono">Teléfono o WhatsApp <span class="req" aria-hidden="true">*</span></label>
+              <input type="tel" id="telefono" name="telefono" autocomplete="tel" inputmode="tel" placeholder="300 000 0000" required aria-describedby="err-telefono">
+              <p class="field__error" id="err-telefono"></p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" name="correo" autocomplete="email" placeholder="nombre@correo.com" aria-describedby="err-correo">
+            <p class="field__error" id="err-correo"></p>
+          </div>
+
+          <div class="field">
+            <label for="motivo">Motivo de consulta <span class="req" aria-hidden="true">*</span></label>
+            <select id="motivo" name="motivo" required aria-describedby="err-motivo">
+              <option value="">Selecciona una opción</option>
+              <option>Rehabilitación neurológica (ACV, lesión medular, trauma)</option>
+              <option>Rehabilitación ortopédica o postquirúrgica</option>
+              <option>Terapia ocupacional</option>
+              <option>Fonoaudiología</option>
+              <option>Hidroterapia</option>
+              <option>Silla de ruedas o ayudas técnicas</option>
+              <option>Aún no lo sé, necesito orientación</option>
+            </select>
+            <p class="field__error" id="err-motivo"></p>
+          </div>
+
+          <div class="field">
+            <label for="mensaje">Cuéntanos brevemente el caso</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Diagnóstico, tiempo de evolución, si cuenta con orden médica o convenio."></textarea>
+          </div>
+
+          <label class="consent" for="consentimiento">
+            <input type="checkbox" id="consentimiento" name="consentimiento" required>
+            <span>Autorizo el tratamiento de mis datos personales conforme a la Ley 1581 de 2012 y a la <a href="#politica">política de privacidad</a> del centro. <span class="req" aria-hidden="true">*</span></span>
+          </label>
+          <p class="field__error" id="err-consentimiento" style="margin:-.9rem 0 .9rem"></p>
+
+          <button class="btn btn--primary btn--wide" type="submit">
+            Solicitar valoración
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+
+          <p class="form__ok" id="form-ok" role="status" aria-live="polite">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="m8 12.3 2.7 2.7L16 9.5"/></svg>
+            <span></span>
+          </p>
+        </form>
+
+        <div class="info">
+          <ul class="info__list">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-4.4-7-10a7 7 0 0 1 14 0c0 5.6-7 10-7 10Z"/><circle cx="12" cy="11" r="2.6"/></svg>
+              <div><dl><dt>Dirección</dt><dd>Av. 5 Nte. #37 A 120<br>Cali, Valle del Cauca</dd></dl></div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.5 14.1c-.2.7-1.3 1.3-1.8 1.3-.5.1-1 .1-1.7-.1a12 12 0 0 1-5.6-4.9c-.4-.7-.9-1.6-.9-2.5 0-.9.5-1.4.7-1.6.2-.2.4-.3.6-.3h.5c.2 0 .4 0 .6.4l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6.5.8 1 1.4 1.7 2 .6.4 1 .6 1.3.8.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.6-.1l1.8.8c.3.1.4.2.5.3v1.3Z"/></svg>
+              <div><dl><dt>WhatsApp</dt><dd><a href="https://wa.me/573185550180" target="_blank" rel="noopener">318 555 0180</a></dd></dl></div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6 8.5-6"/></svg>
+              <div><dl><dt>Correo</dt><dd><a href="mailto:citas@rehabversalles.co">citas@rehabversalles.co</a></dd></dl></div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9.5"/><path d="M12 6.8V12l3.4 2"/></svg>
+              <div><dl><dt>Horarios</dt><dd>Lunes a viernes 8:00 a.m. – 6:00 p.m.<br>Sábados 8:00 a.m. – 12:00 m.</dd></dl></div>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 7h-4.5a2.5 2.5 0 0 1 0-5C18 2 20 5 20 7Z"/><path d="M4 7h4.5a2.5 2.5 0 0 0 0-5C6 2 4 5 4 7Z"/><rect x="2.5" y="7" width="19" height="5" rx="1.5"/><path d="M4.5 12v8.5h15V12M12 7v13.5"/></svg>
+              <div><dl><dt>Convenios</dt><dd>EPS, ARL, medicina prepagada y póliza particular. Consúltanos por tu plan.</dd></dl></div>
+            </li>
+          </ul>
+
+          <div class="map">
+            <!-- Mapa de Google. Sin API key: el parámetro output=embed basta.
+                 Al cambiar la dirección, actualiza el valor de q= (codificado en URL). -->
+            <iframe
+              class="map__frame"
+              title="Ubicación del Centro de Rehabilitación Versalles en Av. 5 Nte. #37 A 120, Cali"
+              src="https://www.google.com/maps?q=Av.%205%20Nte.%20%2337A-120,%20Cali,%20Valle%20del%20Cauca,%20Colombia&amp;z=16&amp;hl=es&amp;output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen></iframe>
+            <div class="map__foot">
+              <span>Parqueadero con acceso accesible sobre la Av. 5 Norte.</span>
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=Av+5+Nte+37A+120+Cali" target="_blank" rel="noopener">Ver cómo llegar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===================== PIE ===================== -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        <a class="footer__brand" href="#inicio">
+          <svg class="brand__mark" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+            <rect width="48" height="48" rx="10" fill="#0F5A55"/>
+            <path d="M13 14 L24 35 L33 18" stroke="#FFFFFF" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="35" cy="14" r="4" fill="#BE5F3B"/>
+          </svg>
+          <span>
+            <span class="brand__name">Versalles</span>
+            <span class="brand__sub">Centro de Rehabilitación</span>
+          </span>
+        </a>
+        <p>Rehabilitación integral neurológica, ortopédica y neuromuscular en Cali. Un equipo, una sede, un plan por persona.</p>
+        <ul class="footer__social">
+          <li><a href="#instagram" aria-label="Instagram del centro"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1.1" fill="currentColor" stroke="none"/></svg></a></li>
+          <li><a href="#facebook" aria-label="Facebook del centro"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-8h2.7l.4-3.1h-3.1V7.9c0-.9.25-1.5 1.55-1.5H16.7V3.6A21 21 0 0 0 14.3 3.5c-2.4 0-4 1.45-4 4.1v2.3H7.6V13h2.7v8Z"/></svg></a></li>
+          <li><a href="https://wa.me/573185550180" aria-label="WhatsApp del centro" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.5 14.1c-.2.7-1.3 1.3-1.8 1.3-.5.1-1 .1-1.7-.1a12 12 0 0 1-5.6-4.9c-.4-.7-.9-1.6-.9-2.5 0-.9.5-1.4.7-1.6.2-.2.4-.3.6-.3h.5c.2 0 .4 0 .6.4l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6.5.8 1 1.4 1.7 2 .6.4 1 .6 1.3.8.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.6-.1l1.8.8c.3.1.4.2.5.3v1.3Z"/></svg></a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer__title">Servicios</h3>
+        <ul>
+          <li><a href="#servicios">Fisioterapia neurológica</a></li>
+          <li><a href="#servicios">Terapia ocupacional</a></li>
+          <li><a href="#servicios">Fonoaudiología</a></li>
+          <li><a href="#servicios">Ortopédica y deportiva</a></li>
+          <li><a href="#servicios">Hidroterapia</a></li>
+          <li><a href="#servicios">Ayudas técnicas</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer__title">El centro</h3>
+        <ul>
+          <li><a href="#nosotros">Quiénes somos</a></li>
+          <li><a href="#ruta">Ruta de atención</a></li>
+          <li><a href="#instalaciones">Instalaciones</a></li>
+          <li><a href="#historias">Historias de éxito</a></li>
+          <li><a href="#preguntas">Preguntas frecuentes</a></li>
+          <li><a href="#contacto">Agenda tu valoración</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer__title">Contacto</h3>
+        <ul>
+          <li>Av. 5 Nte. #37 A 120<br>Cali, Valle del Cauca</li>
+          <li><a href="https://wa.me/573185550180" target="_blank" rel="noopener">WhatsApp 318 555 0180</a></li>
+          <li><a href="mailto:citas@rehabversalles.co">citas@rehabversalles.co</a></li>
+          <li>Lun a Vie 8:00 a.m. – 6:00 p.m.<br>Sáb 8:00 a.m. – 12:00 m.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer__legal">
+      <p>© <span id="anio">2026</span> Centro de Rehabilitación Versalles. Todos los derechos reservados.</p>
+      <ul>
+        <li id="politica"><a href="#politica">Política de tratamiento de datos</a></li>
+        <li><a href="#habeas">Habeas data</a></li>
+        <li><a href="#pqrs">PQRS</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+
+<a class="wa" href="https://wa.me/573185550180" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp al centro">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm5.5 14.1c-.2.7-1.3 1.3-1.8 1.3-.5.1-1 .1-1.7-.1a12 12 0 0 1-5.6-4.9c-.4-.7-.9-1.6-.9-2.5 0-.9.5-1.4.7-1.6.2-.2.4-.3.6-.3h.5c.2 0 .4 0 .6.4l.8 1.9c.1.2 0 .4-.1.5l-.4.5c-.1.2-.3.3-.1.6.5.8 1 1.4 1.7 2 .6.4 1 .6 1.3.8.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.6-.1l1.8.8c.3.1.4.2.5.3v1.3Z"/></svg>
+  <span>Escríbenos</span>
+</a>
+
+<script>
+(function () {
+  "use strict";
+  document.documentElement.classList.add("js");
+
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* --- año actual en el pie --- */
+  var anio = document.getElementById("anio");
+  if (anio) { anio.textContent = new Date().getFullYear(); }
+
+  /* --- encabezado adherido --- */
+  var header = document.getElementById("cabecera");
+  var onScroll = function () {
+    header.classList.toggle("is-stuck", window.scrollY > 12);
+  };
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  /* --- menú móvil --- */
+  var btn = document.getElementById("btn-menu");
+  var panel = document.getElementById("menu-movil");
+  var cerrar = function () {
+    panel.classList.remove("is-open");
+    btn.setAttribute("aria-expanded", "false");
+  };
+  btn.addEventListener("click", function () {
+    var abierto = panel.classList.toggle("is-open");
+    btn.setAttribute("aria-expanded", abierto ? "true" : "false");
+  });
+  panel.addEventListener("click", function (e) {
+    if (e.target.tagName === "A") { cerrar(); }
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") { cerrar(); }
+  });
+
+  /* --- enlace activo según la sección visible --- */
+  var enlaces = Array.prototype.slice.call(document.querySelectorAll(".nav a"));
+  var secciones = enlaces
+    .map(function (a) { return document.querySelector(a.getAttribute("href")); })
+    .filter(Boolean);
+
+  if ("IntersectionObserver" in window && secciones.length) {
+    var spy = new IntersectionObserver(function (entradas) {
+      entradas.forEach(function (en) {
+        if (!en.isIntersecting) { return; }
+        enlaces.forEach(function (a) {
+          a.classList.toggle("is-active", a.getAttribute("href") === "#" + en.target.id);
+        });
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    secciones.forEach(function (s) { spy.observe(s); });
+  }
+
+  /* --- aparición al hacer scroll --- */
+  var ocultos = document.querySelectorAll("[data-reveal]");
+  if (reduce || !("IntersectionObserver" in window)) {
+    Array.prototype.forEach.call(ocultos, function (el) { el.classList.add("is-in"); });
+  } else {
+    var obs = new IntersectionObserver(function (entradas, self) {
+      entradas.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add("is-in");
+          self.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -8% 0px" });
+    Array.prototype.forEach.call(ocultos, function (el) { obs.observe(el); });
+  }
+
+  /* --- contadores de la franja de métricas --- */
+  var nf = new Intl.NumberFormat("es-CO");
+  var contadores = document.querySelectorAll("[data-count]");
+  var animar = function (el) {
+    var fin = parseFloat(el.getAttribute("data-count"));
+    var sep = el.getAttribute("data-sep") === "true";
+    var pinta = function (v) { el.textContent = sep ? nf.format(v) : String(v); };
+    if (reduce) { pinta(fin); return; }
+    var inicio = null;
+    var dur = 1300;
+    var paso = function (t) {
+      if (inicio === null) { inicio = t; }
+      var p = Math.min((t - inicio) / dur, 1);
+      var e = 1 - Math.pow(1 - p, 3);
+      pinta(Math.round(fin * e));
+      if (p < 1) { requestAnimationFrame(paso); }
+    };
+    requestAnimationFrame(paso);
+  };
+  if ("IntersectionObserver" in window && contadores.length) {
+    var obsNum = new IntersectionObserver(function (entradas, self) {
+      entradas.forEach(function (en) {
+        if (en.isIntersecting) { animar(en.target); self.unobserve(en.target); }
+      });
+    }, { threshold: 0.6 });
+    Array.prototype.forEach.call(contadores, function (el) { obsNum.observe(el); });
+  } else {
+    Array.prototype.forEach.call(contadores, function (el) { animar(el); });
+  }
+
+  /* --- validación del formulario ---
+     Demostración sin backend: al enviar se muestra la confirmación.
+     Para recibir las solicitudes, conecta el formulario a un endpoint
+     (por ejemplo una función serverless en /api/citas) dentro de enviar(). */
+  var form = document.getElementById("form-cita");
+  var ok = document.getElementById("form-ok");
+
+  var reglas = {
+    nombre: function (v) { return v.trim().length >= 3 ? "" : "Escribe tu nombre completo."; },
+    telefono: function (v) {
+      var d = v.replace(/\D/g, "");
+      return d.length >= 7 ? "" : "Escribe un teléfono de contacto válido.";
+    },
+    correo: function (v) {
+      if (!v.trim()) { return ""; }
+      return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()) ? "" : "Revisa el correo: falta el @ o el dominio.";
+    },
+    motivo: function (v) { return v ? "" : "Elige el motivo de consulta."; },
+    consentimiento: function (_v, el) { return el.checked ? "" : "Necesitamos tu autorización para contactarte."; }
+  };
+
+  var marcar = function (nombre) {
+    var el = form.elements[nombre];
+    var msg = reglas[nombre](el.value, el);
+    var box = document.getElementById("err-" + nombre);
+    var campo = el.closest(".field") || el.closest(".consent");
+    if (box) { box.textContent = msg; }
+    if (campo) { campo.classList.toggle("has-error", !!msg); }
+    el.setAttribute("aria-invalid", msg ? "true" : "false");
+    return !msg;
+  };
+
+  Object.keys(reglas).forEach(function (nombre) {
+    var el = form.elements[nombre];
+    el.addEventListener("blur", function () { marcar(nombre); });
+    el.addEventListener("input", function () {
+      var box = document.getElementById("err-" + nombre);
+      if (box && box.textContent) { marcar(nombre); }
+    });
+  });
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    ok.classList.remove("is-visible");
+    var valido = Object.keys(reglas).map(marcar).every(Boolean);
+    if (!valido) {
+      var primero = form.querySelector('[aria-invalid="true"]');
+      if (primero) { primero.focus(); }
+      return;
+    }
+    var nombre = form.elements.nombre.value.trim().split(" ")[0];
+    ok.querySelector("span").textContent =
+      nombre + ", recibimos tu solicitud. Te contactamos hoy mismo en horario de atención para confirmar la cita.";
+    ok.classList.add("is-visible");
+    form.reset();
+  });
+})();
+</script>
+<!--ARTIFACT-END-->
+</body>
+</html>
