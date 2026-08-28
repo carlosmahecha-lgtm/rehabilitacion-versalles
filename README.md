@@ -122,7 +122,7 @@ Dos consecuencias de embeber Google:
 
 ## Qué debes reemplazar antes de publicar
 
-- **Datos de contacto**: el WhatsApp `318 555 0180` y el correo `citas@rehabversalles.co`
+- **Datos de contacto**: el WhatsApp `318 555 0180` y el correo `citas@centroversalles.com`
   son de ejemplo. Los enlaces de WhatsApp usan el formato `https://wa.me/57XXXXXXXXXX`.
   No hay teléfono fijo en la página: el único canal telefónico es WhatsApp. La dirección
   (`Av. 5 Nte. #37 A 120, Cali`) y los horarios (Lun a Vie 8:00 a.m. – 6:00 p.m. ·
