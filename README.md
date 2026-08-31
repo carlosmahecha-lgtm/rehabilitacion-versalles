@@ -43,14 +43,45 @@ repositorio) y enlazar el proyecto desde el panel de Vercel.
 
 ## Correo del dominio
 
-Pendiente. El plan es **Zoho Mail** en su plan gratuito: un dominio, hasta 5 buzones de
-5 GB, acceso por web y app móvil (sin IMAP/POP, así que no funciona con Outlook ni Apple
-Mail; para eso hace falta Mail Lite, ~US$1 por buzón al mes).
+Montado y funcionando con **Migadu**, plan Micro (US$19 al año): un dominio, buzones y
+direcciones ilimitados, 5 GB, con IMAP y SMTP —así que funciona en Outlook, Apple Mail y
+la app de Gmail—. Límites del plan: **200 mensajes recibidos y 20 enviados al día**.
 
-El procedimiento: crear la cuenta en Zoho con el dominio `centroversalles.com`, y luego
-agregar en el DNS de Vercel (https://vercel.com/cratch/~/domains) los registros que Zoho
-entregue: un **TXT** de verificación de propiedad, los **MX** de entrega, y los **TXT** de
-SPF y DKIM para que el correo no caiga en spam.
+Buzones activos: `citas@`, `compras@` y `admin@` (postmaster, creado por defecto).
+
+Configuración para clientes de correo:
+
+- IMAP `imap.migadu.com`, puerto 993, SSL/TLS
+- SMTP `smtp.migadu.com`, puerto 465, SSL/TLS
+- Usuario: la dirección completa · Webmail: https://webmail.migadu.com
+
+### Registros DNS del correo
+
+Están en el DNS de Vercel (https://vercel.com/cratch/~/domains). No los borres:
+
+| Tipo | Nombre | Valor |
+| --- | --- | --- |
+| MX | `@` | `10 aspmx1.migadu.com.` |
+| MX | `@` | `20 aspmx2.migadu.com.` |
+| TXT | `@` | `hosted-email-verify=9yeemwlq` |
+| TXT | `@` | `v=spf1 include:spf.migadu.com -all` |
+| TXT | `_dmarc` | `v=DMARC1; p=none; rua=mailto:admin@centroversalles.com; adkim=r; aspf=r` |
+| CNAME | `key1._domainkey` | `key1.centroversalles.com._domainkey.migadu.com.` |
+| CNAME | `key2._domainkey` | `key2.centroversalles.com._domainkey.migadu.com.` |
+| CNAME | `key3._domainkey` | `key3.centroversalles.com._domainkey.migadu.com.` |
+
+### Reputación y entregabilidad
+
+El dominio se registró el 28 de agosto de 2026, así que **al principio los correos pueden
+caer en spam** aunque SPF, DKIM y DMARC estén correctos: los filtros corporativos
+desconfían por definición de los dominios nuevos. Por eso el DMARC arranca en `p=none`
+(solo monitoreo) en vez de `p=quarantine`.
+
+Cuando lleven unas semanas de envíos normales y los informes DMARC que llegan a `admin@`
+confirmen que todo alinea, conviene subir la política a `p=quarantine`.
+
+**Pendiente**: pagar la suscripción de Migadu antes de que termine el periodo de prueba.
+La fecha exacta está en la sección de suscripción de su consola.
 
 ## Estructura de la página
 
@@ -122,12 +153,12 @@ Dos consecuencias de embeber Google:
 
 ## Qué debes reemplazar antes de publicar
 
-- **Datos de contacto**: el WhatsApp `318 555 0180` y el correo `citas@centroversalles.com`
-  son de ejemplo. Los enlaces de WhatsApp usan el formato `https://wa.me/57XXXXXXXXXX`.
-  No hay teléfono fijo en la página: el único canal telefónico es WhatsApp. La dirección
-  (`Av. 5 Nte. #37 A 120, Cali`) y los horarios (Lun a Vie 8:00 a.m. – 6:00 p.m. ·
-  Sáb 8:00 a.m. – 12:00 m.) ya son los reales y aparecen en la barra superior, la sección
-  de contacto y el pie de página.
+- **Datos de contacto**: ya son todos reales — el WhatsApp `311 890 7266`, el correo
+  `citas@centroversalles.com`, la dirección `Av. 5 Nte. #37 A 120, Cali` y los horarios
+  (Lun a Vie 8:00 a.m. – 6:00 p.m. · Sáb 8:00 a.m. – 12:00 m.). Aparecen en la barra
+  superior, la franja de llamado a la acción, la sección de contacto, el pie de página y
+  el botón flotante. No hay teléfono fijo: el único canal telefónico es WhatsApp, y sus
+  enlaces usan el formato `https://wa.me/57XXXXXXXXXX` (sin espacios ni signo +).
 - **Cifras**: los `data-count` de la franja de métricas y las tres cifras del hero
   (3 años, 2.400 pacientes, 9 especialidades) son estimaciones coherentes con los 3 años
   de operación. Ajústalas a los números reales, incluido el 92 % de adherencia y los
